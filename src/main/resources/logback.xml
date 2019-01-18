@@ -35,6 +35,5 @@
 	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
 	</root>
-	<!--屏蔽Mongo日志  -->
- 	<logger name="org.mongodb.driver" level="OFF"/>
+	
 </configuration>

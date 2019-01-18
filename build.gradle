@@ -11,6 +11,8 @@ tasks.withType(JavaCompile) {
 dependencies {
 	compile project(':yliu_crawler')
 	
+	compile project(':yliu_utils_redis')
+	
 	compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 	
 	compile group: 'redis.clients', name: 'jedis', version: '2.9.0'

@@ -4,10 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.yliu.executer.thread.ThreadPool;
+import com.yliu.utils.RedisUtils;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPubSub;
-
 /**
  * redis频道监听
  * @author YLiu
