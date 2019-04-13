@@ -13,14 +13,22 @@ import com.yliu.executer.jobs.Job;
  */
 public enum JobType {
 	
-	JOB_CRAWLER(1,"JOB_CRAWLER","爬取51JOB的爬虫",Void->new JobCrawlerJob());
-	
+	JOB_CRAWLER(1,"JOB_CRAWLER","爬取51JOB的爬虫",v->new JobCrawlerJob());
+	/**
+	 * job编号
+	 */
 	private Integer jobNum;
-	
+	/**
+	 * job的名称
+	 */
 	private String jobName;
-	
+	/**
+	 * Job的描述
+	 */
 	private String jobDescribe;
-
+	/**
+	 * 绑定的具体的job
+	 */
 	private Function<Void,Job> job;
 
 	

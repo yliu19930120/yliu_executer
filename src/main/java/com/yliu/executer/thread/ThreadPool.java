@@ -1,7 +1,8 @@
 package com.yliu.executer.thread;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +13,7 @@ private final static Logger log = LoggerFactory.getLogger(ThreadPool.class);
 	
 	private final static int CORE_POOL_SIZE = 6;
 	
-	private static ExecutorService pool;
+	private static ThreadPoolExecutor executor;
 	
 	static{
 		init(CORE_POOL_SIZE);
@@ -20,15 +21,16 @@ private final static Logger log = LoggerFactory.getLogger(ThreadPool.class);
 	
 	private static void init(int num){
 		log.info("初始化线程池数{}",num);
-		pool = Executors.newFixedThreadPool(num);
+		executor = 
+				new ThreadPoolExecutor(num, 12, 4, TimeUnit.HOURS, new ArrayBlockingQueue<Runnable>(1));
 	}
 
 
 	public static void execute(Runnable r){
-		pool.execute(r);
+		executor.execute(r);
 	}
 
 	public static void close(){
-		pool.shutdown();
+		executor.shutdown();
 	}
 }
