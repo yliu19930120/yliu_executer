@@ -3,7 +3,6 @@ package com.yliu.executer.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.yliu.executer.thread.ThreadPool;
 import com.yliu.utils.RedisUtils;
 
 import redis.clients.jedis.Jedis;
