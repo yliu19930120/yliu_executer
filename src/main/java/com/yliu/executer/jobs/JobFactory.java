@@ -14,6 +14,7 @@ public class JobFactory {
 	
 	static{
 		JOB_MAP.put(JobType.JOB_CRAWLER.getJobName(), JobType.JOB_CRAWLER);
+		JOB_MAP.put(JobType.VEDIO_CRAWLER.getJobName(), JobType.VEDIO_CRAWLER);
 	}
 	
 	public static void run(String jobName){
