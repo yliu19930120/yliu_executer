@@ -3,6 +3,7 @@ package com.yliu.executer.enums;
 import java.util.function.Function;
 
 import com.yliu.executer.crawlerjob.JobCrawlerJob;
+import com.yliu.executer.crawlerjob.TorrentCrawlerJob;
 import com.yliu.executer.crawlerjob.VedioCrawlerJob;
 import com.yliu.executer.jobs.Job;
 
@@ -15,7 +16,8 @@ import com.yliu.executer.jobs.Job;
 public enum JobType {
 	
 	JOB_CRAWLER(1,"JOB_CRAWLER","爬取51JOB的爬虫",v->new JobCrawlerJob()),
-	VEDIO_CRAWLER(2,"VEDIO_CRAWLER","爬取神秘代码爬虫",v->new VedioCrawlerJob());
+	VEDIO_CRAWLER(2,"VEDIO_CRAWLER","爬取神秘代码爬虫",v->new VedioCrawlerJob()),
+	TORRENT_CRAWLER(2,"TORRENT_CRAWLER","种子爬虫",v->new TorrentCrawlerJob());
 	/**
 	 * job编号
 	 */
